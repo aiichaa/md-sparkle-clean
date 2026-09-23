@@ -38,7 +38,7 @@ Bun is not installed on the host. Run it through Docker:
   - `share.ts`: gzip + base64url URL-fragment sharing, with a **decompression size cap** (zip-bomb guard).
   - `urls.ts`: link / image allow-lists. `download.ts`: filename sanitizing. `stats.ts`: word count + title extraction. `limits.ts`: 5 MB cap.
 - **Styles** `src/styles.css`: `@tailwindcss/typography` (`prose`), `.md-preview` overrides, hljs token colours (light/dark), print stylesheet (`@page` A4).
-- **UI primitives** `src/components/ui/`: shadcn/ui. Do not edit manually.
+- **UI primitives** `src/components/ui/`: shadcn/ui, pruned to what is used (`button`, `tooltip`, `sonner`). Add components back with the shadcn CLI; do not edit them manually.
 
 ## Points d'attention
 
