@@ -4,13 +4,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { SupportButton, SUPPORT_URL } from "../SupportButton";
 
 describe("SupportButton", () => {
-  it("links to the Buy Me a Coffee page safely", () => {
+  it("links to the Ko-fi page safely", () => {
     const html = renderToStaticMarkup(
       <TooltipProvider>
         <SupportButton />
       </TooltipProvider>,
     );
-    expect(SUPPORT_URL).toBe("https://buymeacoffee.com/aiichaa");
+    expect(SUPPORT_URL).toBe("https://ko-fi.com/aiichaa");
     expect(html).toContain(`href="${SUPPORT_URL}"`);
     expect(html).toContain('target="_blank"');
     expect(html).toContain('rel="noopener noreferrer"');

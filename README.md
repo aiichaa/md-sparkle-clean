@@ -17,7 +17,7 @@ Live: <https://md.aiichaa.com>
 - Document stats (words, lines, reading time)
 - Fullscreen preview (Esc to close), light / dark theme, responsive desktop & mobile layout
 - Monaco-powered editor with Markdown syntax highlighting
-- Floating “Buy me a coffee” button (bottom-left): a plain link to [buymeacoffee.com/aiichaa](https://buymeacoffee.com/aiichaa). No third-party script, so the CSP is unchanged
+- Floating “Support on Ko-fi” button (bottom-left): a plain link to [ko-fi.com/aiichaa](https://ko-fi.com/aiichaa). No third-party script, so the CSP is unchanged
 
 ### PDF export notes
 
