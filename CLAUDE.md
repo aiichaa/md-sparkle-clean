@@ -52,6 +52,7 @@ Bun is not installed on the host. Run it through Docker:
 - **Supply chain.** `bunfig.toml` sets `minimumReleaseAge = 86400`. `package.json` `overrides` pins `dompurify` (pulled by monaco-editor) to a patched 3.4.x. Run `bun audit` after dependency changes. It should report 0 vulnerabilities.
 
 - **Support button** (`src/components/SupportButton.tsx`): a plain outbound link to https://ko-fi.com/aiichaa with a bundled lucide icon, fixed bottom-left (toasts are bottom-right), `print:hidden`, below the fullscreen overlay. Do **not** replace it with Ko-fi's (or any) donation widget script. That would need `script-src`/`connect-src`/`frame-src` relaxed and would load third-party code. Ko-fi was chosen over Buy Me a Coffee because BMC pays out only via Stripe, which doesn't support Morocco; Ko-fi pays straight into PayPal.
+- **Network isolation.** `docker-compose.yml` gives the network a fixed bridge name (`br-<app>clarity`), which the host nftables table `inet clarity_isolation` (`/etc/nftables-clarity.nft`, loaded by `clarity-isolation.service`) matches. The container **cannot open any connection** (internet or other containers), and no other container can connect to it. Only the host (nginx via docker-proxy) reaches it. Keep the app self-contained: no outbound calls, and don't rename the network.
 
 ## Style
 
