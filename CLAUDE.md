@@ -51,6 +51,8 @@ Bun is not installed on the host. Run it through Docker:
 - **Security headers come from the reverse proxy** (`/etc/nginx/sites-available/md.aiichaa.com`), not the Node server. `public/_headers` is only for static hosts and is blocked at the proxy.
 - **Supply chain.** `bunfig.toml` sets `minimumReleaseAge = 86400`. `package.json` `overrides` pins `dompurify` (pulled by monaco-editor) to a patched 3.4.x. Run `bun audit` after dependency changes. It should report 0 vulnerabilities.
 
+- **Support button** (`src/components/SupportButton.tsx`): a plain outbound link to https://buymeacoffee.com/aiichaa with a bundled lucide icon, fixed bottom-left (toasts are bottom-right), `print:hidden`, below the fullscreen overlay. Do **not** replace it with Buy Me a Coffee's widget script. That would need `script-src`/`connect-src` relaxed and would load third-party trackers.
+
 ## Style
 
 - Tailwind CSS v4 + shadcn/ui primitives + typography plugin

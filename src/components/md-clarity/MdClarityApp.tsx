@@ -9,6 +9,7 @@ import { MarkdownPreview } from "./MarkdownPreview";
 import { Toolbar } from "./Toolbar";
 import { StatusBadge } from "./StatusBadge";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { SupportButton } from "@/components/SupportButton";
 import { useTheme } from "@/hooks/use-theme";
 import { computeStats, extractTitle } from "@/lib/md/stats";
 import { exceedsLimit, MAX_BYTES, MAX_BYTES_LABEL } from "@/lib/md/limits";
@@ -359,7 +360,7 @@ export function MdClarityApp() {
           </main>
 
           <footer className="border-t border-border print:hidden">
-            <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-3 text-xs text-muted-foreground sm:px-6">
+            <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-3 pl-16 text-xs text-muted-foreground sm:px-6 sm:pl-16 2xl:pl-6">
               <span>MD Clarity — runs entirely in your browser.</span>
               <span>No tracking. No storage. No uploads.</span>
             </div>
@@ -383,6 +384,8 @@ export function MdClarityApp() {
               </p>
             </div>
           ) : null}
+
+          <SupportButton />
 
           <div className="print:hidden">
             <Toaster position="bottom-right" theme={theme} />
